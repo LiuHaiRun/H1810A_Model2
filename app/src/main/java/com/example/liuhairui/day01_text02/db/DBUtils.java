@@ -44,6 +44,13 @@ public class DBUtils {
         mDao.insertOrReplaceInTx(list);
         Log.d(TAG, "添加成功。。。。。。。。。。。。");
     }
+    //删除
+    public void deleteData(Student student){
+        if (student != null){
+            mDao.deleteInTx(student);
+        }
+        Log.d(TAG, "已删除。。。。。。。。。。。。。");
+    }
     //查询
     public List<Student> showAll(){
         List<Student> list = mDao.queryBuilder().list();
